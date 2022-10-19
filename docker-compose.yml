@@ -1,0 +1,48 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:5.7.22
+    container_name: mysql
+    restart: always
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: 
+      MYSQL_ROOT_PASSWORD: "012012012"
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - apps-network
+    volumes:
+      - .docker/mysql/:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    links:
+      - mysql:db
+    ports:
+      - 8181:80
+    environment:
+      MYSQL_ROOT_PASSWORD: "012012012"
+    networks:
+      - apps-network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - apps-network
+    volumes:
+      - .docker/nginx/config.d/:/etc/nginx/conf.d/
+
+volumes:
+  service:
+networks:
+  apps-network:
+    external: true
