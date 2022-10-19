@@ -7,16 +7,8 @@ This repository is collect many images that you need to deploy apps in any OS
 - phpmyadmin/phpmyadmin:latest
 - nginx:latest
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+## Run 
+- you must to have docker in your machine
+- create new empty folder .docker
+- create network <code>docker network create apps-network</code>
+- up your compose file <code>docker-compose up -d</code>
