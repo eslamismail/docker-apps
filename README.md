@@ -6,6 +6,7 @@ This repository is collect many images that you need to deploy apps in any OS
 - mysql:5.7.22
 - phpmyadmin/phpmyadmin:latest
 - nginx:latest
+- redis:6.2-alpine
 
 ## Run 
 - you must to have docker in your machine
