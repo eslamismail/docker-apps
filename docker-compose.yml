@@ -34,6 +34,8 @@ services:
     image: nginx:latest
     container_name: nginx
     restart: always
+    depends_on:
+      - phpmyadmin
     ports:
       - 80:80
     networks:
